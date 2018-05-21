@@ -6,9 +6,7 @@ from matplotlib import pyplot
 # load dataset
 def parser(x):
   return datetime.strptime(x, '%Y-%m-%d %H:%M:%S')
-series = read_csv('pm25_content_nj.csv',
-                  header=0, parse_dates=[0], index_col=0,
-                  squeeze=True, date_parser=parser)
+series = read_csv('xxx')
 # split data into train and test
 X = series.values
 pre_len = round(len(X) * -0.3)
