@@ -18,7 +18,8 @@ def inverse_difference(history, yhat, interval=1):
 	return yhat + history[-interval]
 # load dataset
 series = read_csv('pm25_content_nj.csv', header=0, 
-parse_dates=[0], index_col=0, squeeze=True, date_parser=parser)
+parse_dates=[0], index_col=0, squeeze=True, 
+date_parser=parser)
 print(series.head())
 # transform data to be stationary
 differenced = difference(series, 1)
@@ -26,7 +27,8 @@ print(differenced.head())
 #invert transform
 inverted = list()
 for i in range(len(differenced)):
-	value = inverse_difference(series, differenced[i], len(serues) - i)
+	value = inverse_difference(series, 
+	differenced[i], len(serues) - i)
 	invetsed.append(value)
 inverted = Series(inverted)
 print(inverted.head())
